@@ -7,6 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MarkdownHeading, SiteStructureItem, } from "./global/definitions";
 export namespace Components {
+    interface AboutMePage {
+    }
     interface AnnouncementBar {
     }
     interface AppBurger {
@@ -45,8 +47,6 @@ export namespace Components {
         "pageLinks": MarkdownHeading[];
         "srcUrl": string;
     }
-    interface LandingPage {
-    }
     interface LowerContentNav {
         "next"?: SiteStructureItem;
         "prev"?: SiteStructureItem;
@@ -71,6 +71,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAboutMePageElement extends Components.AboutMePage, HTMLStencilElement {
+    }
+    var HTMLAboutMePageElement: {
+        prototype: HTMLAboutMePageElement;
+        new (): HTMLAboutMePageElement;
+    };
     interface HTMLAnnouncementBarElement extends Components.AnnouncementBar, HTMLStencilElement {
     }
     var HTMLAnnouncementBarElement: {
@@ -143,12 +149,6 @@ declare global {
         prototype: HTMLInPageNavigationElement;
         new (): HTMLInPageNavigationElement;
     };
-    interface HTMLLandingPageElement extends Components.LandingPage, HTMLStencilElement {
-    }
-    var HTMLLandingPageElement: {
-        prototype: HTMLLandingPageElement;
-        new (): HTMLLandingPageElement;
-    };
     interface HTMLLowerContentNavElement extends Components.LowerContentNav, HTMLStencilElement {
     }
     var HTMLLowerContentNavElement: {
@@ -204,6 +204,7 @@ declare global {
         new (): HTMLSiteTopBarElement;
     };
     interface HTMLElementTagNameMap {
+        "about-me-page": HTMLAboutMePageElement;
         "announcement-bar": HTMLAnnouncementBarElement;
         "app-burger": HTMLAppBurgerElement;
         "app-icon": HTMLAppIconElement;
@@ -216,7 +217,6 @@ declare global {
         "doc-component": HTMLDocComponentElement;
         "highlight-code": HTMLHighlightCodeElement;
         "in-page-navigation": HTMLInPageNavigationElement;
-        "landing-page": HTMLLandingPageElement;
         "lower-content-nav": HTMLLowerContentNavElement;
         "newsletter-signup": HTMLNewsletterSignupElement;
         "notfound-page": HTMLNotfoundPageElement;
@@ -229,6 +229,8 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AboutMePage {
+    }
     interface AnnouncementBar {
         "onToggleModal"?: (event: CustomEvent<any>) => void;
     }
@@ -268,8 +270,6 @@ declare namespace LocalJSX {
         "pageLinks"?: MarkdownHeading[];
         "srcUrl"?: string;
     }
-    interface LandingPage {
-    }
     interface LowerContentNav {
         "next"?: SiteStructureItem;
         "prev"?: SiteStructureItem;
@@ -293,6 +293,7 @@ declare namespace LocalJSX {
     interface SiteTopBar {
     }
     interface IntrinsicElements {
+        "about-me-page": AboutMePage;
         "announcement-bar": AnnouncementBar;
         "app-burger": AppBurger;
         "app-icon": AppIcon;
@@ -305,7 +306,6 @@ declare namespace LocalJSX {
         "doc-component": DocComponent;
         "highlight-code": HighlightCode;
         "in-page-navigation": InPageNavigation;
-        "landing-page": LandingPage;
         "lower-content-nav": LowerContentNav;
         "newsletter-signup": NewsletterSignup;
         "notfound-page": NotfoundPage;
@@ -321,6 +321,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "about-me-page": LocalJSX.AboutMePage & JSXBase.HTMLAttributes<HTMLAboutMePageElement>;
             "announcement-bar": LocalJSX.AnnouncementBar & JSXBase.HTMLAttributes<HTMLAnnouncementBarElement>;
             "app-burger": LocalJSX.AppBurger & JSXBase.HTMLAttributes<HTMLAppBurgerElement>;
             "app-icon": LocalJSX.AppIcon & JSXBase.HTMLAttributes<HTMLAppIconElement>;
@@ -333,7 +334,6 @@ declare module "@stencil/core" {
             "doc-component": LocalJSX.DocComponent & JSXBase.HTMLAttributes<HTMLDocComponentElement>;
             "highlight-code": LocalJSX.HighlightCode & JSXBase.HTMLAttributes<HTMLHighlightCodeElement>;
             "in-page-navigation": LocalJSX.InPageNavigation & JSXBase.HTMLAttributes<HTMLInPageNavigationElement>;
-            "landing-page": LocalJSX.LandingPage & JSXBase.HTMLAttributes<HTMLLandingPageElement>;
             "lower-content-nav": LocalJSX.LowerContentNav & JSXBase.HTMLAttributes<HTMLLowerContentNavElement>;
             "newsletter-signup": LocalJSX.NewsletterSignup & JSXBase.HTMLAttributes<HTMLNewsletterSignupElement>;
             "notfound-page": LocalJSX.NotfoundPage & JSXBase.HTMLAttributes<HTMLNotfoundPageElement>;

@@ -55,34 +55,23 @@ export class SiteHeader {
   render() {
     return (
       <div class="container">
-        <stencil-route-link url="/" class="logo-link" anchorTitle="Stencil logo">
-          <app-icon name="logo"/>
+        <stencil-route-link url="/" class="logo-link" anchorTitle="cbinzer logo">
+          <span class="logo">cbinzer</span>
         </stencil-route-link>
 
         <div class="header-menu">
-          <stencil-route-link urlMatch="/docs" url="/docs/introduction" onClick={() => { this.hideNav() }}>
-            Docs
-          </stencil-route-link>
-          <stencil-route-link url="/resources" exact={true} onClick={() => { this.hideNav() }}>
-            Resources
-          </stencil-route-link>
-          <stencil-route-link url="/blog" onClick={() => { this.hideNav() }}>
-            Blog
-          </stencil-route-link>
+          {/*<stencil-route-link url="/blog" onClick={() => { this.hideNav() }}>*/}
+          {/*  Blog*/}
+          {/*</stencil-route-link>*/}
 
           <ul class="external-links list--unstyled">
             <li>
-              <a rel="noopener" class="link--external" target="_blank" href="https://twitter.com/stenciljs" aria-label="Twitter">
+              <a rel="noopener" class="link--external" target="_blank" href="https://twitter.com/chbinzer" aria-label="Twitter">
                 <app-icon name="twitter"></app-icon>
               </a>
             </li>
             <li>
-              <a rel="noopener" class="link--external" target="_blank" href="https://stencil-worldwide.herokuapp.com" aria-label="Slack">
-                <app-icon name="slack"></app-icon>
-              </a>
-            </li>
-            <li>
-              <a rel="noopener" class="link--external" target="_blank" href="https://github.com/ionic-team/stencil" aria-label="Github">
+              <a rel="noopener" class="link--external" target="_blank" href="https://github.com/cbinzer" aria-label="Github">
                 <app-icon name="github"></app-icon>
               </a>
             </li>

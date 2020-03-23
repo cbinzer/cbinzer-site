@@ -3,6 +3,7 @@ dist/
 www/
 scripts/*.js
 src/assets/docs/
+.idea
 
 *~
 *.sw[mnpcod]

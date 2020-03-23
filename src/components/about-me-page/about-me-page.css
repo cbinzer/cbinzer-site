@@ -1,0 +1,71 @@
+about-me-page {
+  display: block;
+  overflow: hidden;
+}
+
+about-me-page .author-image {
+  width: 70px;
+  height: 70px;
+  flex: 0 0 70px;
+  border-radius: 35px;
+  align-self: center;
+  justify-self: center;
+}
+
+about-me-page .about-me-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+about-me-page .about-me-section .author-short-description h1 {
+  font-size: 20px;
+  line-height: 1.15;
+  font-weight: 300;
+}
+
+about-me-page .about-me-section .author-short-description p {
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--color-dolphin);
+  margin-bottom: 32px;
+}
+
+@media (min-width: 576px) {
+  about-me-page .about-me-section .author-short-description h1 {
+    font-size: 28px;
+  }
+
+  about-me-page .author-image {
+    width: 100px;
+    height: 100px;
+    flex: 0 0 100px;
+    border-radius: 50px;
+  }
+}
+
+@media (min-width: 768px) {
+  about-me-page .about-me-section .author-short-description h1 {
+    font-size: 38px;
+  }
+
+  about-me-page .author-image {
+    width: 150px;
+    height: 150px;
+    flex: 0 0 150px;
+    border-radius: 75px;
+  }
+}
+
+@media (min-width: 992px) {
+  about-me-page .about-me-section .author-short-description h1 {
+    font-size: 52px;
+  }
+
+  about-me-page .author-image {
+    width: 200px;
+    height: 200px;
+    flex: 0 0 200px;
+    border-radius: 100px;
+  }
+}

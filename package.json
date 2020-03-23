@@ -1,8 +1,8 @@
 {
-  "name": "@stencil/stencil-site",
+  "name": "@cbinzer/cbinzer-site",
   "private": true,
-  "version": "0.0.1",
-  "description": "Stencil Site",
+  "version": "0.1.0",
+  "description": "cbinzer Site",
   "scripts": {
     "build": "npm run site.structure && npm run docs && stencil build --prerender --next",
     "build.ci": "npm run site.structure && npm run docs && stencil build --prerender --max-workers=1 --ci --next",
@@ -36,14 +36,14 @@
     "typescript": "^3.7.5",
     "workbox-build": "4.3.1"
   },
-  "author": "Ionic Team",
+  "author": "Christian Binzer",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ionic-team/stencil-site.git"
+    "url": "git+https://github.com/cbinzer/cbinzer-site.git"
   },
   "bugs": {
-    "url": "https://github.com/ionic-team/stencil-site"
+    "url": "https://github.com/cbinzer/cbinzer-site"
   },
-  "homepage": "https://stenciljs.com/"
+  "homepage": "https://cbinzer.de/"
 }
