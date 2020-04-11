@@ -1,3 +1,9 @@
+# Redirects
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^www\.cbinzer\.de$ [NC]
+RewriteRule ^(.*)$ https://cbinzer.de/$1 [L,R=301]
+
 # Browser Caching
 <IfModule mod_expires.c>
 	ExpiresActive On
