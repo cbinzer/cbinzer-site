@@ -6,7 +6,7 @@ import { Component, ComponentInterface, h, Host } from '@stencil/core';
 })
 export class PrivacyPageComponent implements ComponentInterface {
   public componentWillRender(): Promise<void> | void {
-    document.title = 'Christian Binzer - Datenschutzerklärung';
+    document.title = 'Datenschutzerklärung | Christian Binzer';
   }
 
   public render() {

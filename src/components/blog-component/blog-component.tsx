@@ -23,7 +23,7 @@ export class BlogIndex {
 
       if (post && post.filePath) {
         insertMetaTags(post);
-        document.title = `Christian Binzer - Blog: ${post.title}`;
+        document.title = `${post.title} | Christian Binzer`;
         this.content = await fetchContent(post.filePath);
       }
     }

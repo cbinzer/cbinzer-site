@@ -5,7 +5,7 @@ import { Component, ComponentInterface, h, Host } from '@stencil/core';
 })
 export class ImprintPageComponent implements ComponentInterface {
   componentWillRender(): Promise<void> | void {
-    document.title = `Christian Binzer - Impressum`;
+    document.title = `Impressum | Christian Binzer`;
   }
 
   public render() {
