@@ -84,11 +84,14 @@ export class AppRoot implements ComponentInterface {
             <stencil-route style={{ display: 'none' }} routeRender={this.setHistory} />
             <stencil-route-switch>
               <stencil-route url="/" component="cb-home-page" exact={true} />
+
               <stencil-route url="/blog" component="cb-blog-page" exact={true} />
+              <stencil-route url="/blog/" component="cb-blog-page" exact={true} />
               <stencil-route
                 url="/blog/:pageName"
                 routeRender={({ match }) => <blog-component page={match!.url}></blog-component>}
               />
+
               <stencil-route url="/impressum" component="cb-imprint-page" />
               <stencil-route url="/datenschutz" component="cb-privacy-page" />
 
