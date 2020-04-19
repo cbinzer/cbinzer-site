@@ -5,7 +5,7 @@ url: /blog/einfuehrung-stenciljs
 author: Christian Binzer
 twitter: chbinzer
 description: In diesem Blog-Artikel möchte ich euch eine kurze Einführung in StencilJS geben. Dazu schauen wir uns die Definition von StencilJS an und erstellen eine einfache Alert-Komponente.
-img: /assets/img/blog/posts/einfuehrung-stenciljs/stenciljs-logo.png
+img: /assets/img/blog/posts/einfuehrung-stenciljs/einfuehrung-stenciljs.png
 ---
 
 ![Einfuehrung in StencilJS](/assets/img/blog/posts/einfuehrung-stenciljs/stenciljs-logo.png)
