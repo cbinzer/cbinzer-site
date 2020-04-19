@@ -219,4 +219,4 @@ export class AlertWrapperComponent implements ComponentInterface {
 
 Diese kurze Einführung reißt nur einen kleinen Teil der Funktionalität von StencilJS an. Das Tool hat noch viel mehr zu bieten, unter anderem Support fürs Prerendering oder einen Store zum Verwalten von Shared State. Damit eignet sich Stencil nicht nur für Komponenten-Libraries, sondern auch zum Erstellen vollwertiger Apps. Entwickler, die Erfahrung mit Angular und/oder React haben, werden sich sehr schnell in Stencil zurechtfinden, denn Stencil vereinigt die besten Konzepte der beiden Frameworks.
 
-Ich hoffe, meine kurze Einführung in StencilJS hat euch gefallen. Mir persönlich gefällt der Ansatz, wie man Web Components erstellt, sehr gut. Den Sourcecode für das Beispiel findet ihr auf GitHub.
+Ich hoffe, meine kurze Einführung in StencilJS hat euch gefallen. Mir persönlich gefällt der Ansatz, wie man Web Components erstellt, sehr gut. Den Sourcecode für das Beispiel findet ihr auf <a href="https://github.com/cbinzer/blog-post-stenciljs-introduction/" target="_blank">GitHub</a>.
