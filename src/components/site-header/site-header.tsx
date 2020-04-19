@@ -60,9 +60,9 @@ export class SiteHeader {
         </stencil-route-link>
 
         <div class="header-menu">
-          {/*<stencil-route-link url="/blog" onClick={() => { this.hideNav() }}>*/}
-          {/*  Blog*/}
-          {/*</stencil-route-link>*/}
+          <stencil-route-link url="/blog" onClick={() => { this.hideNav() }}>
+            Blog
+          </stencil-route-link>
 
           <ul class="external-links list--unstyled">
             <li>

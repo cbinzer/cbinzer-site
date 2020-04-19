@@ -1,0 +1,13 @@
+cb-home-page {
+  display: block;
+}
+
+cb-home-page .blog-section {
+  margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+  cb-home-page .blog-section {
+    margin-top: 100px;
+  }
+}

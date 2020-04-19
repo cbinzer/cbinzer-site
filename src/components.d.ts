@@ -22,7 +22,19 @@ export namespace Components {
     interface BlogComponent {
         "page"?: string;
     }
-    interface BlogList {
+    interface CbAboutMeTeaser {
+    }
+    interface CbBlogList {
+    }
+    interface CbBlogPage {
+    }
+    interface CbHomePage {
+    }
+    interface CbImprintPage {
+    }
+    interface CbNotfoundPage {
+    }
+    interface CbPrivacyPage {
     }
     interface ContributorList {
         "contributors"?: string[];
@@ -37,9 +49,6 @@ export namespace Components {
         "name"?: string;
         "sourceUrl"?: string;
     }
-    interface DocComponent {
-        "page"?: string;
-    }
     interface HighlightCode {
     }
     interface InPageNavigation {
@@ -50,10 +59,6 @@ export namespace Components {
     interface LowerContentNav {
         "next"?: SiteStructureItem;
         "prev"?: SiteStructureItem;
-    }
-    interface NewsletterSignup {
-    }
-    interface NotfoundPage {
     }
     interface PreFooter {
     }
@@ -107,11 +112,47 @@ declare global {
         prototype: HTMLBlogComponentElement;
         new (): HTMLBlogComponentElement;
     };
-    interface HTMLBlogListElement extends Components.BlogList, HTMLStencilElement {
+    interface HTMLCbAboutMeTeaserElement extends Components.CbAboutMeTeaser, HTMLStencilElement {
     }
-    var HTMLBlogListElement: {
-        prototype: HTMLBlogListElement;
-        new (): HTMLBlogListElement;
+    var HTMLCbAboutMeTeaserElement: {
+        prototype: HTMLCbAboutMeTeaserElement;
+        new (): HTMLCbAboutMeTeaserElement;
+    };
+    interface HTMLCbBlogListElement extends Components.CbBlogList, HTMLStencilElement {
+    }
+    var HTMLCbBlogListElement: {
+        prototype: HTMLCbBlogListElement;
+        new (): HTMLCbBlogListElement;
+    };
+    interface HTMLCbBlogPageElement extends Components.CbBlogPage, HTMLStencilElement {
+    }
+    var HTMLCbBlogPageElement: {
+        prototype: HTMLCbBlogPageElement;
+        new (): HTMLCbBlogPageElement;
+    };
+    interface HTMLCbHomePageElement extends Components.CbHomePage, HTMLStencilElement {
+    }
+    var HTMLCbHomePageElement: {
+        prototype: HTMLCbHomePageElement;
+        new (): HTMLCbHomePageElement;
+    };
+    interface HTMLCbImprintPageElement extends Components.CbImprintPage, HTMLStencilElement {
+    }
+    var HTMLCbImprintPageElement: {
+        prototype: HTMLCbImprintPageElement;
+        new (): HTMLCbImprintPageElement;
+    };
+    interface HTMLCbNotfoundPageElement extends Components.CbNotfoundPage, HTMLStencilElement {
+    }
+    var HTMLCbNotfoundPageElement: {
+        prototype: HTMLCbNotfoundPageElement;
+        new (): HTMLCbNotfoundPageElement;
+    };
+    interface HTMLCbPrivacyPageElement extends Components.CbPrivacyPage, HTMLStencilElement {
+    }
+    var HTMLCbPrivacyPageElement: {
+        prototype: HTMLCbPrivacyPageElement;
+        new (): HTMLCbPrivacyPageElement;
     };
     interface HTMLContributorListElement extends Components.ContributorList, HTMLStencilElement {
     }
@@ -131,12 +172,6 @@ declare global {
         prototype: HTMLDemoCardElement;
         new (): HTMLDemoCardElement;
     };
-    interface HTMLDocComponentElement extends Components.DocComponent, HTMLStencilElement {
-    }
-    var HTMLDocComponentElement: {
-        prototype: HTMLDocComponentElement;
-        new (): HTMLDocComponentElement;
-    };
     interface HTMLHighlightCodeElement extends Components.HighlightCode, HTMLStencilElement {
     }
     var HTMLHighlightCodeElement: {
@@ -154,18 +189,6 @@ declare global {
     var HTMLLowerContentNavElement: {
         prototype: HTMLLowerContentNavElement;
         new (): HTMLLowerContentNavElement;
-    };
-    interface HTMLNewsletterSignupElement extends Components.NewsletterSignup, HTMLStencilElement {
-    }
-    var HTMLNewsletterSignupElement: {
-        prototype: HTMLNewsletterSignupElement;
-        new (): HTMLNewsletterSignupElement;
-    };
-    interface HTMLNotfoundPageElement extends Components.NotfoundPage, HTMLStencilElement {
-    }
-    var HTMLNotfoundPageElement: {
-        prototype: HTMLNotfoundPageElement;
-        new (): HTMLNotfoundPageElement;
     };
     interface HTMLPreFooterElement extends Components.PreFooter, HTMLStencilElement {
     }
@@ -210,16 +233,19 @@ declare global {
         "app-icon": HTMLAppIconElement;
         "app-root": HTMLAppRootElement;
         "blog-component": HTMLBlogComponentElement;
-        "blog-list": HTMLBlogListElement;
+        "cb-about-me-teaser": HTMLCbAboutMeTeaserElement;
+        "cb-blog-list": HTMLCbBlogListElement;
+        "cb-blog-page": HTMLCbBlogPageElement;
+        "cb-home-page": HTMLCbHomePageElement;
+        "cb-imprint-page": HTMLCbImprintPageElement;
+        "cb-notfound-page": HTMLCbNotfoundPageElement;
+        "cb-privacy-page": HTMLCbPrivacyPageElement;
         "contributor-list": HTMLContributorListElement;
         "custom-clock": HTMLCustomClockElement;
         "demo-card": HTMLDemoCardElement;
-        "doc-component": HTMLDocComponentElement;
         "highlight-code": HTMLHighlightCodeElement;
         "in-page-navigation": HTMLInPageNavigationElement;
         "lower-content-nav": HTMLLowerContentNavElement;
-        "newsletter-signup": HTMLNewsletterSignupElement;
-        "notfound-page": HTMLNotfoundPageElement;
         "pre-footer": HTMLPreFooterElement;
         "pwas-page": HTMLPwasPageElement;
         "resources-page": HTMLResourcesPageElement;
@@ -245,7 +271,19 @@ declare namespace LocalJSX {
     interface BlogComponent {
         "page"?: string;
     }
-    interface BlogList {
+    interface CbAboutMeTeaser {
+    }
+    interface CbBlogList {
+    }
+    interface CbBlogPage {
+    }
+    interface CbHomePage {
+    }
+    interface CbImprintPage {
+    }
+    interface CbNotfoundPage {
+    }
+    interface CbPrivacyPage {
     }
     interface ContributorList {
         "contributors"?: string[];
@@ -260,9 +298,6 @@ declare namespace LocalJSX {
         "name"?: string;
         "sourceUrl"?: string;
     }
-    interface DocComponent {
-        "page"?: string;
-    }
     interface HighlightCode {
     }
     interface InPageNavigation {
@@ -273,10 +308,6 @@ declare namespace LocalJSX {
     interface LowerContentNav {
         "next"?: SiteStructureItem;
         "prev"?: SiteStructureItem;
-    }
-    interface NewsletterSignup {
-    }
-    interface NotfoundPage {
     }
     interface PreFooter {
     }
@@ -299,16 +330,19 @@ declare namespace LocalJSX {
         "app-icon": AppIcon;
         "app-root": AppRoot;
         "blog-component": BlogComponent;
-        "blog-list": BlogList;
+        "cb-about-me-teaser": CbAboutMeTeaser;
+        "cb-blog-list": CbBlogList;
+        "cb-blog-page": CbBlogPage;
+        "cb-home-page": CbHomePage;
+        "cb-imprint-page": CbImprintPage;
+        "cb-notfound-page": CbNotfoundPage;
+        "cb-privacy-page": CbPrivacyPage;
         "contributor-list": ContributorList;
         "custom-clock": CustomClock;
         "demo-card": DemoCard;
-        "doc-component": DocComponent;
         "highlight-code": HighlightCode;
         "in-page-navigation": InPageNavigation;
         "lower-content-nav": LowerContentNav;
-        "newsletter-signup": NewsletterSignup;
-        "notfound-page": NotfoundPage;
         "pre-footer": PreFooter;
         "pwas-page": PwasPage;
         "resources-page": ResourcesPage;
@@ -327,16 +361,19 @@ declare module "@stencil/core" {
             "app-icon": LocalJSX.AppIcon & JSXBase.HTMLAttributes<HTMLAppIconElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "blog-component": LocalJSX.BlogComponent & JSXBase.HTMLAttributes<HTMLBlogComponentElement>;
-            "blog-list": LocalJSX.BlogList & JSXBase.HTMLAttributes<HTMLBlogListElement>;
+            "cb-about-me-teaser": LocalJSX.CbAboutMeTeaser & JSXBase.HTMLAttributes<HTMLCbAboutMeTeaserElement>;
+            "cb-blog-list": LocalJSX.CbBlogList & JSXBase.HTMLAttributes<HTMLCbBlogListElement>;
+            "cb-blog-page": LocalJSX.CbBlogPage & JSXBase.HTMLAttributes<HTMLCbBlogPageElement>;
+            "cb-home-page": LocalJSX.CbHomePage & JSXBase.HTMLAttributes<HTMLCbHomePageElement>;
+            "cb-imprint-page": LocalJSX.CbImprintPage & JSXBase.HTMLAttributes<HTMLCbImprintPageElement>;
+            "cb-notfound-page": LocalJSX.CbNotfoundPage & JSXBase.HTMLAttributes<HTMLCbNotfoundPageElement>;
+            "cb-privacy-page": LocalJSX.CbPrivacyPage & JSXBase.HTMLAttributes<HTMLCbPrivacyPageElement>;
             "contributor-list": LocalJSX.ContributorList & JSXBase.HTMLAttributes<HTMLContributorListElement>;
             "custom-clock": LocalJSX.CustomClock & JSXBase.HTMLAttributes<HTMLCustomClockElement>;
             "demo-card": LocalJSX.DemoCard & JSXBase.HTMLAttributes<HTMLDemoCardElement>;
-            "doc-component": LocalJSX.DocComponent & JSXBase.HTMLAttributes<HTMLDocComponentElement>;
             "highlight-code": LocalJSX.HighlightCode & JSXBase.HTMLAttributes<HTMLHighlightCodeElement>;
             "in-page-navigation": LocalJSX.InPageNavigation & JSXBase.HTMLAttributes<HTMLInPageNavigationElement>;
             "lower-content-nav": LocalJSX.LowerContentNav & JSXBase.HTMLAttributes<HTMLLowerContentNavElement>;
-            "newsletter-signup": LocalJSX.NewsletterSignup & JSXBase.HTMLAttributes<HTMLNewsletterSignupElement>;
-            "notfound-page": LocalJSX.NotfoundPage & JSXBase.HTMLAttributes<HTMLNotfoundPageElement>;
             "pre-footer": LocalJSX.PreFooter & JSXBase.HTMLAttributes<HTMLPreFooterElement>;
             "pwas-page": LocalJSX.PwasPage & JSXBase.HTMLAttributes<HTMLPwasPageElement>;
             "resources-page": LocalJSX.ResourcesPage & JSXBase.HTMLAttributes<HTMLResourcesPageElement>;

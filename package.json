@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "description": "cbinzer Site",
   "scripts": {
-    "build": "npm run site.structure && npm run docs && stencil build --prerender --next",
-    "build.ci": "npm run site.structure && npm run docs && stencil build --prerender --max-workers=1 --ci --next",
-    "docs": "tsc --p ./scripts && node ./scripts/markdown-to-html && node ./scripts/blog-list",
+    "build": "npm run build.blog && stencil build --prerender --next",
+    "build.ci": "npm run build.blog && stencil build --prerender --max-workers=1 --ci --next",
+    "build.blog": "tsc --p ./scripts && node ./scripts/blog-list",
     "deploy.next": "firebase deploy --project next --token=$FIREBASE_DEPLOY_TOKEN",
     "deploy.prod": "firebase deploy --project production --token=$FIREBASE_DEPLOY_TOKEN",
     "prerender": "stencil build --prerender",
