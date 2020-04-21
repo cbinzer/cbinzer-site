@@ -41,7 +41,7 @@ export class BlogIndex {
         <div class="share-links">
           <div class="sticky">
             <a
-              href={`http://twitter.com/home?status=${post.title}`}
+              href={`https://twitter.com/intent/tweet?url=${window.location.href}&text=${post.title}`}
               class="twitter"
               onClick={function(this: HTMLAnchorElement, ev) {
                 ev.preventDefault();
