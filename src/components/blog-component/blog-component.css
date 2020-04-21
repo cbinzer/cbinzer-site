@@ -136,8 +136,4 @@ blog-component .share-links a + a {
     margin-top: 0;
     margin-left: 12px;
   }
-
-  blog-component .twitter {
-    padding-top: 5px;
-  }
 }
