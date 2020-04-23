@@ -6,7 +6,7 @@ import { Component, ComponentInterface, h, Host } from '@stencil/core';
 })
 export class HomePageComponent implements ComponentInterface {
   componentWillRender(): Promise<void> | void {
-    document.title = `Christian Binzer - Software Engineer`;
+    document.title = `Software Engineer | Christian Binzer`;
   }
 
   public render() {

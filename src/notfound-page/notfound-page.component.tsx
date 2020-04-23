@@ -7,7 +7,7 @@ import { fileNotFound } from '../global/site-structure-utils';
 })
 export class NotfoundPageComponent implements ComponentInterface {
   public componentWillRender(): Promise<void> | void {
-    document.title = 'Christian Binzer - 404';
+    document.title = '404 - Christian Binzer';
   }
 
   public render() {

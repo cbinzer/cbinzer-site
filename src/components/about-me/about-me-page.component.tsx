@@ -6,7 +6,7 @@ import { Component, h, Host } from '@stencil/core';
 })
 export class AboutMePageComponent {
   public constructor() {
-    document.title = `Christian Binzer - Software Engineer`;
+    document.title = `Software Engineer | Christian Binzer`;
   }
 
   render() {

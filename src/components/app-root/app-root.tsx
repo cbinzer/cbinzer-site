@@ -33,12 +33,11 @@ export class AppRoot implements ComponentInterface {
       this.history = history;
       this.history.listen(() => {
         // Google Analytics
-        // (window as any).gtag("config", "UA-44023830-34", {
-        //   page_path: location.pathname + location.search
-        // });
-        // Hubspot
-        // (window as any)._hsq.push(['setPath', location.pathname + location.search ]);
-        // (window as any)._hsq.push(['trackPageView']);
+        setTimeout(() => {
+          (window as any).gtag('config', 'UA-164390774-1', {
+            page_path: location.pathname + location.search
+          });
+        }, 100);
       });
     }
   };
