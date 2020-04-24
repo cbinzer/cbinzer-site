@@ -77,6 +77,7 @@ export class AppRoot implements ComponentInterface {
 
     return (
       <SiteProviderConsumer.Provider state={siteState}>
+        <cb-cookie-consent />
         <site-header />
         <main>
           <stencil-router scrollTopOffset={0}>

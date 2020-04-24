@@ -28,6 +28,8 @@ export namespace Components {
     }
     interface CbBlogPage {
     }
+    interface CbCookieConsent {
+    }
     interface CbHomePage {
     }
     interface CbImprintPage {
@@ -129,6 +131,12 @@ declare global {
     var HTMLCbBlogPageElement: {
         prototype: HTMLCbBlogPageElement;
         new (): HTMLCbBlogPageElement;
+    };
+    interface HTMLCbCookieConsentElement extends Components.CbCookieConsent, HTMLStencilElement {
+    }
+    var HTMLCbCookieConsentElement: {
+        prototype: HTMLCbCookieConsentElement;
+        new (): HTMLCbCookieConsentElement;
     };
     interface HTMLCbHomePageElement extends Components.CbHomePage, HTMLStencilElement {
     }
@@ -236,6 +244,7 @@ declare global {
         "cb-about-me-teaser": HTMLCbAboutMeTeaserElement;
         "cb-blog-list": HTMLCbBlogListElement;
         "cb-blog-page": HTMLCbBlogPageElement;
+        "cb-cookie-consent": HTMLCbCookieConsentElement;
         "cb-home-page": HTMLCbHomePageElement;
         "cb-imprint-page": HTMLCbImprintPageElement;
         "cb-notfound-page": HTMLCbNotfoundPageElement;
@@ -276,6 +285,8 @@ declare namespace LocalJSX {
     interface CbBlogList {
     }
     interface CbBlogPage {
+    }
+    interface CbCookieConsent {
     }
     interface CbHomePage {
     }
@@ -333,6 +344,7 @@ declare namespace LocalJSX {
         "cb-about-me-teaser": CbAboutMeTeaser;
         "cb-blog-list": CbBlogList;
         "cb-blog-page": CbBlogPage;
+        "cb-cookie-consent": CbCookieConsent;
         "cb-home-page": CbHomePage;
         "cb-imprint-page": CbImprintPage;
         "cb-notfound-page": CbNotfoundPage;
@@ -364,6 +376,7 @@ declare module "@stencil/core" {
             "cb-about-me-teaser": LocalJSX.CbAboutMeTeaser & JSXBase.HTMLAttributes<HTMLCbAboutMeTeaserElement>;
             "cb-blog-list": LocalJSX.CbBlogList & JSXBase.HTMLAttributes<HTMLCbBlogListElement>;
             "cb-blog-page": LocalJSX.CbBlogPage & JSXBase.HTMLAttributes<HTMLCbBlogPageElement>;
+            "cb-cookie-consent": LocalJSX.CbCookieConsent & JSXBase.HTMLAttributes<HTMLCbCookieConsentElement>;
             "cb-home-page": LocalJSX.CbHomePage & JSXBase.HTMLAttributes<HTMLCbHomePageElement>;
             "cb-imprint-page": LocalJSX.CbImprintPage & JSXBase.HTMLAttributes<HTMLCbImprintPageElement>;
             "cb-notfound-page": LocalJSX.CbNotfoundPage & JSXBase.HTMLAttributes<HTMLCbNotfoundPageElement>;

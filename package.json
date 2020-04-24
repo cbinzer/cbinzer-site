@@ -45,5 +45,8 @@
   "bugs": {
     "url": "https://github.com/cbinzer/cbinzer-site"
   },
-  "homepage": "https://cbinzer.de/"
+  "homepage": "https://cbinzer.de/",
+  "dependencies": {
+    "cookieconsent": "^3.1.1"
+  }
 }

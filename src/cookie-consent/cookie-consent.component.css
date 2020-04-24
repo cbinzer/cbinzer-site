@@ -1,0 +1,53 @@
+@import '~cookieconsent/build/cookieconsent.min.css';
+
+.cc-window {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  background: var(--color-white);
+  border-radius: 13px;
+}
+
+.cc-left {
+  left: calc(50% - 192px);
+}
+
+.cc-link {
+  color: var(--color-dodger-blue);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.cc-link:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+.cc-btn.cc-dismiss {
+  color: white;
+  background: rgb(76, 72, 255);
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 20px;
+  letter-spacing: 0.56px;
+  box-shadow: rgba(2, 8, 20, 0.1) 0 2px 4px 0, rgba(2, 8, 20, 0.08) 0 1px 2px 0;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  transition: all ease 0.15s;
+}
+
+.cc-message {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-gunpowder);
+}
+
+@media screen and (max-width: 414px) and (orientation: portrait), screen and (max-width: 736px) and (orientation: landscape) {
+  .cc-window.cc-floating {
+    margin: 10px;
+  }
+}
