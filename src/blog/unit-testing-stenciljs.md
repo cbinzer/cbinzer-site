@@ -1,10 +1,10 @@
 ---
 title: Unit Testing StencilJS
-date: 2020-05-10
+date: 2020-05-09
 url: /blog/unit-testing-stenciljs
 author: Christian Binzer
 twitter: chbinzer
-description: Wie kann man mit Unit Tests die Logik und den HTML-Inhalt einer StencilJS Komponente testen? Antworten gibt es in diesem Blog Post. 
+description: Wie kann man mit Unit Tests die Logik und den HTML-Inhalt einer StencilJS Komponente testen? Antworten gibt es in diesem Blog Post.
 img: /assets/img/blog/posts/unit-testing-stenciljs/unit-testing-stenciljs.png
 ---
 
@@ -38,7 +38,7 @@ Nicht wundern, der erste Start eines Tests kann etwas länger dauern, denn bei e
 
 Komponentenlogik lässt sich in StencilJS relativ einfach testen, denn eine StencilJS-Komponente ist nichts anderes als eine TypeScript-Klasse. Für einen einfachen Test kann man also die Klasse instanziieren, darauf folgend die passenden Methodenaufrufe durchführen und am Ende die erwartenden Änderungen am Objekt prüfen.
 
-Nehmen wir an wir haben wieder eine simple Alert-Komponente (wie schon in meinem <a href="/blog/einfuehrung-stenciljs" target="_blank">letzten Blog-Artikel</a>), die ein `visible`-Attribut und eine Methode `show` enthält. Der initiale Zustand des `visible`-Attributs ist `false`. Die `show`-Methode ändert diesen Zustand auf `true`. 
+Nehmen wir an wir haben wieder eine simple Alert-Komponente (wie schon in meinem <a href="/blog/einfuehrung-stenciljs" target="_blank">letzten Blog-Artikel</a>), die ein `visible`-Attribut und eine Methode `show` enthält. Der initiale Zustand des `visible`-Attributs ist `false`. Die `show`-Methode ändert diesen Zustand auf `true`.
 
 Wie schon erwähnt können wir diese Logik testen, indem wir eine neue Instanz der Komponentenklasse erzeugen, die Methode aufrufen und anschließend prüfen, ob sich der Zustand des `visible`-Attributs auf `true` geändert hat:
 
@@ -70,7 +70,7 @@ describe('AlertComponent', () => {
   it('should render the alert', async () => {
     const page = await newSpecPage({
       components: [AlertComponent],
-      html: '<cb-alert />',
+      html: '<cb-alert />'
     });
 
     expect(page.root).toEqualHtml(`
@@ -127,7 +127,7 @@ describe('AlertComponent', () => {
 
 Komponenten können eine gewisse Komplexität aufweisen. Sie können zum Beispiel komplizierte Berechnungen durchführen oder entfernte Datenendpunkte aufrufen. Dazu werden oft externe Bibliotheken oder interne Browser APIs verwendet. Diese Funktionalitäten möchte man nicht unbedingt testen, da man davon ausgeht, dass diese bereits getestet wurden und somit einwandfrei funktionieren. Solche Funktionalitäten können gemockt werden. Dazu verwendet StencilJS die von Jest zur Verfügung stehenden Mechanismen.
 
-Gehen wir davon aus, dass unsere Alert-Komponente ihre anzuzeigende Nachricht von einem Server bekommt und dabei die vom Browser zur Verfügung stehende `fetch`-API verwendet: 
+Gehen wir davon aus, dass unsere Alert-Komponente ihre anzuzeigende Nachricht von einem Server bekommt und dabei die vom Browser zur Verfügung stehende `fetch`-API verwendet:
 
 ```typescript
 import { Component, ComponentInterface, h, Host, State } from '@stencil/core';
@@ -141,8 +141,7 @@ export class AlertComponent implements ComponentInterface {
   @State() public message: string;
 
   public async componentWillLoad(): Promise<void> {
-    this.message = await fetch('https://cbinzer.de/blog/unit-testing-stenciljs')
-      .then((response) => response.json());
+    this.message = await fetch('https://cbinzer.de/blog/unit-testing-stenciljs').then(response => response.json());
   }
 
   public render() {
@@ -173,7 +172,7 @@ describe('AlertComponent', () => {
     fetch = jest.fn(() =>
       Promise.resolve({
         ok: true,
-        json: jest.fn(() => Promise.resolve('Unit Testing StencilJS')),
+        json: jest.fn(() => Promise.resolve('Unit Testing StencilJS'))
       })
     );
   });
@@ -181,7 +180,7 @@ describe('AlertComponent', () => {
   it('should render the alert', async () => {
     const page = await newSpecPage({
       components: [AlertComponent],
-      html: '<cb-alert />',
+      html: '<cb-alert />'
     });
 
     expect(page.root).toEqualHtml(`
@@ -203,4 +202,3 @@ Mit Jest lassen sich nicht nur einzelne Funktionen mocken, sondern auch ganze Mo
 ## Fazit
 
 Für mich ist das Testing in StencilJS sehr gelungen. Das Rad wird hier nicht neu erfunden sondern man setzt auf etablierte Bibliotheken wie Jest. Dadurch fühlt man sich schnell zu Hause, besonders wenn man aus der React oder <a href="https://angular.io/" target="_blank">Angular</a> Welt kommt. Der einzige Nachteil für mich ist, dass man sich um das Rerendering mit `waitForChanges` selbst kümmern muss. Zwar gibt es in den `NewSpecPageOptions` eine Einstellung `autoApplyChanges`, diese bewirkt aber nur bei Property-Änderungen ein erneutes Rendern. Bei Änderungen des internen States einer Komponente muss das Rendern selbst getriggert werden. Außerdem sollte einem bewusst sein, dass in den Unit Tests der Browser nur simuliert wird. Dementsprechend stehen einem nicht alle Funktionen zur Verfügung. Dafür bietet uns StencilJS aber Support für e2e-Tests, auf die ich in einem weiteren Blog Post eingehen werde. Die in diesem Artikel gezeigten Beispiele findet ihr auf <a href="https://github.com/cbinzer/blog-post-unit-testing-stenciljs" target="_blank">GitHub</a>.
- 
