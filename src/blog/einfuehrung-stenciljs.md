@@ -1,6 +1,6 @@
 ---
 title: Einführung in StencilJS
-date: 19. April 2020
+date: 2020-04-19
 url: /blog/einfuehrung-stenciljs
 author: Christian Binzer
 twitter: chbinzer

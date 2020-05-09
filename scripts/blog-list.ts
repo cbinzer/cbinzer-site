@@ -2,19 +2,19 @@ import marked from 'marked';
 import glob from 'glob';
 import { promisify } from 'util';
 import path from 'path';
-import {readFile, writeFile, ensureDir, mkdirp } from 'fs-extra';
+import { readFile, writeFile, ensureDir, mkdirp } from 'fs-extra';
 
 import { changeCodeCreation } from './markdown-renderer';
 import frontMatter from 'front-matter';
 import { BlogPostInterface } from '../src/global/definitions';
-import { convertHtmlToHypertextData } from './lib/hypertext'
+import { convertHtmlToHypertextData } from './lib/hypertext';
+import moment from 'moment';
 
 const globAsync = promisify(glob);
 
 const DESTINATION_DIR = './src/assets/blog';
 const SOURCE_DIR = './src/blog';
 const BLOG_LIST_FILE = './src/assets/blog/list.json';
-
 
 (async function() {
   try {
@@ -25,7 +25,7 @@ const BLOG_LIST_FILE = './src/assets/blog/list.json';
   const files = await globAsync(`${SOURCE_DIR}/**/*.md`, {});
   const allBlogPosts: BlogPostInterface[] = [];
 
-  const filePromises = files.map(async (filePath) => {
+  const filePromises = files.map(async filePath => {
     let htmlContents = '';
     const jsonFileName = path.relative(SOURCE_DIR, filePath);
     const destinationFileName = path.join(
@@ -53,10 +53,7 @@ const BLOG_LIST_FILE = './src/assets/blog/list.json';
         headerIds: true
       }).trim();
 
-      await mkdirp(path.join(
-        DESTINATION_DIR,
-        path.dirname(jsonFileName)
-      ));
+      await mkdirp(path.join(DESTINATION_DIR, path.dirname(jsonFileName)));
 
       const data = {
         ...parsedMarkdown.attributes,
@@ -64,12 +61,11 @@ const BLOG_LIST_FILE = './src/assets/blog/list.json';
         hypertext: convertHtmlToHypertextData(htmlContents)
       };
 
-      data.title = `Stencil Blog - ${data.title.trim()}`;
+      data.title = `${data.title.trim()} | Christian Binzer`;
 
       await writeFile(destinationFileName, JSON.stringify(data), {
         encoding: 'utf8'
       });
-
     } catch (e) {
       console.error(filePath);
       throw e;
@@ -79,9 +75,16 @@ const BLOG_LIST_FILE = './src/assets/blog/list.json';
 
   await Promise.all(filePromises);
 
-  allBlogPosts.sort((a, b) => {
-    return Date.parse(b.date) - Date.parse(a.date);
-  });
+  allBlogPosts
+    .sort((a, b) => {
+      return Date.parse(b.date) - Date.parse(a.date);
+    })
+    .forEach(
+      blogPost =>
+        (blogPost.date = moment(blogPost.date)
+          .locale('de')
+          .format('DD. MMMM YYYY'))
+    );
 
   await writeFile(BLOG_LIST_FILE, JSON.stringify(allBlogPosts, null, 2), {
     encoding: 'utf8'
@@ -89,5 +92,3 @@ const BLOG_LIST_FILE = './src/assets/blog/list.json';
 
   console.log(`successfully converted ${filePromises.length} files`);
 })();
-
-

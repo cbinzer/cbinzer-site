@@ -1,15 +1,5 @@
 [
   {
-    "title": "Einführung in StencilJS",
-    "date": "19. April 2020",
-    "url": "/blog/einfuehrung-stenciljs",
-    "author": "Christian Binzer",
-    "twitter": "chbinzer",
-    "description": "In diesem Blog-Artikel möchte ich euch eine kurze Einführung in StencilJS geben. Dazu schauen wir uns die Definition von StencilJS an und erstellen eine einfache Alert-Komponente.",
-    "img": "/assets/img/blog/posts/einfuehrung-stenciljs/einfuehrung-stenciljs.png",
-    "filePath": "/assets/blog/einfuehrung-stenciljs.json"
-  },
-  {
     "title": "Unit Testing StencilJS",
     "date": "10. Mai 2020",
     "url": "/blog/unit-testing-stenciljs",
@@ -18,5 +8,15 @@
     "description": "Wie kann man mit Unit Tests die Logik und den HTML-Inhalt einer StencilJS Komponente testen? Antworten gibt es in diesem Blog Post.",
     "img": "/assets/img/blog/posts/unit-testing-stenciljs/unit-testing-stenciljs.png",
     "filePath": "/assets/blog/unit-testing-stenciljs.json"
+  },
+  {
+    "title": "Einführung in StencilJS",
+    "date": "19. April 2020",
+    "url": "/blog/einfuehrung-stenciljs",
+    "author": "Christian Binzer",
+    "twitter": "chbinzer",
+    "description": "In diesem Blog-Artikel möchte ich euch eine kurze Einführung in StencilJS geben. Dazu schauen wir uns die Definition von StencilJS an und erstellen eine einfache Alert-Komponente.",
+    "img": "/assets/img/blog/posts/einfuehrung-stenciljs/einfuehrung-stenciljs.png",
+    "filePath": "/assets/blog/einfuehrung-stenciljs.json"
   }
 ]

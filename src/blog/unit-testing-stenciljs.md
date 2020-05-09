@@ -1,6 +1,6 @@
 ---
 title: Unit Testing StencilJS
-date: 10. Mai 2020
+date: 2020-05-10
 url: /blog/unit-testing-stenciljs
 author: Christian Binzer
 twitter: chbinzer
